@@ -31,10 +31,11 @@ public class User {
     public String setName(String name){
         this.name = name;
     }
-    public String setEmail(String email){
+    public String setEmail(String email) {
         this.email = email;
     }
     public String setPassword(String password){
         this.password = password;
     }
+    
 }

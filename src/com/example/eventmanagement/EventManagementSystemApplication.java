@@ -3,7 +3,7 @@ package com.example.eventmanagement;
 import com.example.eventmanagement.controllers.AttendeeController;
 import com.example.eventmanagement.controllers.UserController;
 import com.example.eventmanagement.controllers.EventController;
-
+import com.example.eventmanagement.controllers.FeedbackController;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -12,6 +12,7 @@ public class EventManagementSystemApplication {
         UserController userController = new UserController();
         EventController eventController = new EventController();
         AttendeeController attendeeController = new AttendeeController();
+        FeedbackController feedbackController = new FeedbackController();
         // Test user registration
         //1: pass
         userController.registerUser("abc", "ab.cd1@gmail.com", "Password@1234");
@@ -70,5 +71,11 @@ public class EventManagementSystemApplication {
         // Test sending reminders
         attendeeController.SendReminder("1");
 
+        // Test submitting feedback
+        feedbackController.submitFeedback("1", "1", "Great event!", 5);
+        feedbackController.submitFeedback("1", "2", "Very informative.", 4);
+
+        // Test viewing feedback for an event
+        feedbackController.viewFeedbackForEvent("1");
     }
 }

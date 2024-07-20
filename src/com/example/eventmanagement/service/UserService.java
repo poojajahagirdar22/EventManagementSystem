@@ -15,7 +15,7 @@ private Map<String, User> usersByEmail = new HashMap<>();
 //method to Register a new user
     public String registerUser(String name, String email, String password){
         //email validation
-        if (!isValidEmail(email) == "True"){
+        if (!isValidEmail(email)){
             return "Email is invalid";
         }
         //check email already exists/registered
@@ -56,7 +56,7 @@ private Map<String, User> usersByEmail = new HashMap<>();
         User user = usersById.get(userId);
         //check if user exists
         if (user == null){
-            return "Email does not exists";
+            return "User does not exists";
         }
         //check if newly entered password corresponds to referring user and if not does it exists for any other user in the usersByEmail hashmap
         //meaning, check if newly entered email is registered for a different user

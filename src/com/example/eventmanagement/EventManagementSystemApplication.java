@@ -14,6 +14,8 @@ public class EventManagementSystemApplication {
         AttendeeController attendeeController = new AttendeeController();
         FeedbackController feedbackController = new FeedbackController();
         // Test user registration
+        System.out.println("=== User Registration ===");
+
         //1: pass
         userController.registerUser("abc", "ab.cd1@gmail.com", "Password@1234");
         //2: pass
@@ -24,6 +26,8 @@ public class EventManagementSystemApplication {
         userController.registerUser("abcx", "1Ab.cd1@g1.com1", "1234");
 
         //Test user login
+        System.out.println("=== User Login ===");
+
         //1: pass
         userController.loginUser("ab.cd1@gmail.com", "Password@1234");
         //2: email doesnot exist
@@ -32,6 +36,8 @@ public class EventManagementSystemApplication {
         userController.loginUser("ab.cd1@gmail.com", "Password@12345");
 
         //Test updating user profile
+        System.out.println("=== User Profile update ===");
+
         //1: email already exists, update failed
         userController.UpdateUserProfile("1", "abcd", "ab.cd1@gmail.com");
         //2: email updated
@@ -41,6 +47,8 @@ public class EventManagementSystemApplication {
 
 
         //Test event creation
+        System.out.println("=== Creating Events ===");
+
         //1:
         eventController.createEvent("Conference", "Tech Conference", LocalDateTime.now().plusDays(10), "Pune", "1");
 
@@ -54,28 +62,43 @@ public class EventManagementSystemApplication {
 
         //Test update event
         //1:
+        System.out.println("=== Editing Event ===");
+
         eventController.editEvent("1", "New Conference", "New data for Tech Conference", LocalDateTime.now().plusDays(15), "Gulbarga");
 
 
         //Test deletion of event
         //1:
+        System.out.println("=== Deleting Event ===");
+
         eventController.deleteEvent("1");
 
+
         // Test registering attendees
+        System.out.println("=== Registering Attendees ===");
+
         attendeeController.RegisterAttendee("1", "1");
         attendeeController.RegisterAttendee("2", "1");
 
         // Test viewing attendee list
+        System.out.println("=== Viewing Attendee List ===");
+
         attendeeController.ViewAttendeeList("1");
 
         // Test sending reminders
+        System.out.println("=== Sending Reminders ===");
+
         attendeeController.SendReminder("1");
 
         // Test submitting feedback
+        System.out.println("=== Submitting Feedback ===");
+
         feedbackController.submitFeedback("1", "1", "Great event!", 5);
         feedbackController.submitFeedback("1", "2", "Very informative.", 4);
 
         // Test viewing feedback for an event
+        System.out.println("=== Viewing Feedback ===");
+
         feedbackController.viewFeedbackForEvent("1");
     }
 }

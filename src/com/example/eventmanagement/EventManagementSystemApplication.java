@@ -5,7 +5,7 @@ import com.example.eventmanagement.controllers.UserController;
 import com.example.eventmanagement.controllers.EventController;
 import com.example.eventmanagement.controllers.FeedbackController;
 import java.time.LocalDateTime;
-import java.util.UUID;
+//import java.util.UUID;
 
 public class EventManagementSystemApplication {
     public static void main(String[] args) {
